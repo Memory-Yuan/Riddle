@@ -15,6 +15,9 @@ group :test do
     gem 'factory_girl_rails'
     gem 'capybara'
     gem 'guard-rspec'
+    gem 'spork-rails', '4.0.0'
+    gem 'guard-spork', '1.5.0'
+    gem 'childprocess', '0.5.5'
 end
 
 # Use SCSS for stylesheets
