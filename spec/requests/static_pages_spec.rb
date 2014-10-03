@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "Static pages" do
 
     let(:base_title) {"Riddle"}
-    subject { page }    #測試page的subject
+    subject { page }    #將page默認為測試對象，之後should就知道是要expext(page).to
     
     shared_examples_for "all static pages" do
         it { should have_selector('h1', text: heading) }
