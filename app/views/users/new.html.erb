@@ -1,2 +1,10 @@
 <h1>Sign up</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+
+<div class="form-signup">
+    <%= form_for(@user) do |f| %>
+        <%= render 'fields', f: f %>
+        <div class="form-group">
+            <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+        </div>
+    <% end %>
+</div>
