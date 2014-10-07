@@ -15,6 +15,7 @@ describe User do
     it { should respond_to(:password_digest) }
     it { should respond_to(:password) }
     it { should respond_to(:password_confirmation) }
+    it { should respond_to(:remember_token) }
     it { should respond_to(:authenticate) }
     
     it { should be_valid }
@@ -112,5 +113,11 @@ describe User do
             specify { expect(user_for_invalid_password).to be_falsey }
                 #specify 等於 it，這裡只是為了語意通順。be_falsey不可以用be_false，已經改名了
         end
+    end
+    
+    describe "remember token" do
+        before { @user.save }
+        its(:remember_token) { should_not be_blank }
+            #等同於 it { expect(@user.remember_token).not_to be_blank }
     end
 end

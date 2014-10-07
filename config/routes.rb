@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   match '/contact', to: 'static_pages#contact', via: 'get'
 
   match '/signup',  to: 'users#new',            via: 'get'
-#  match '/signin',  to: 'sessions#new',         via: 'get'
-#  match '/signout', to: 'sessions#destroy',     via: 'delete'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
 #    
   resources :users do
 #      member do
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 #          #/users/1/following或/users/1/followers
 #      end
   end
-#  resources :sessions,               only: [:new, :create, :destroy]
+  resources :sessions,               only: [:new, :create, :destroy]
 #  resources :microposts,             only: [:create, :destroy]
 #  resources :follower_followedships, only: [:create, :destroy]
  
