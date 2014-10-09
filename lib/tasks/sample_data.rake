@@ -12,7 +12,7 @@ namespace :db do
             email:                  "memory@qq.qq",
             password:               "qqqqqq",
             password_confirmation:  "qqqqqq",
-#            admin:                  true
+            admin:                  true
         )
         99.times do |n|
             name     = Faker::Name.name

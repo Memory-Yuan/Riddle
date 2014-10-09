@@ -17,9 +17,21 @@ describe User do
     it { should respond_to(:password_confirmation) }
     it { should respond_to(:remember_token) }
     it { should respond_to(:authenticate) }
+    it { should respond_to(:admin) }
     
     it { should be_valid }
+    it { should_not be_admin }
         #只要是Ruby可以返回boolean的方法foo?，就可以變成be_foo在測試中使用        
+
+    describe "with admin attribute set to true" do
+        before do
+            @user.save!
+            @user.toggle!(:admin)  #把admin變成true
+        end
+        
+        it { should be_admin }
+    end
+
     describe "when name is not present" do
         before { @user.name = " " }  #將name設為空的
         it { should_not be_valid }    #應該要不通過valid

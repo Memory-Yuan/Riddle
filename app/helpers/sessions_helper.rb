@@ -27,7 +27,7 @@ module SessionsHelper
         user == current_user
     end
     
-    def signed_in_user
+    def must_sign_in
         if !signed_in?
             store_location
             flash[:warning] = "Please sign in"
