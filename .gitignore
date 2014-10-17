@@ -27,3 +27,6 @@ doc/
 
 #NetBeans IDE
 /nbproject
+
+#App ENV vars
+/config/initializers/app_env_vars.rb
